@@ -6,6 +6,6 @@
 			<p><strong>ID:</strong> {{card.id}}</p>
 			<p><strong>Tipos:</strong> {{card.types}}</p>
 		</div>
-		<button class="card--details__button">Ver Detalhes</button>
+		<button class="card--details__button" [routerLink]="card.id" >Ver Detalhes</button>
 	</div>
 </div>

@@ -12,4 +12,8 @@ export class PokemonTcgService {
   getCards(busca?) {
     return this.http.get<Cards>(`/v1/cards${busca ? '?name=' + busca : ''}`);
   }
+
+  getCardById(id) {
+    return this.http.get<Cards>(`/v1/cards/${id}`);
+  }
 }
