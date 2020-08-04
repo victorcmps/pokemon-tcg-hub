@@ -1,1 +1,37 @@
-{{cardDetails | json}}
+<a [routerLink]="['/cards']">← Voltar para home</a>
+<div class="card-details">
+	<div class="card-details--image"><img [src]="cardDetails.card.imageUrlHiRes"></div>
+	<div class="card-details--info">
+		<div *ngFor="let type of cardDetails.card.types">
+			<h2 class="card-details--info__title">{{cardDetails.card.name}}
+				<span class="card-details--types {{type.toLowerCase()}}">{{type}}</span>
+			</h2>
+		</div>
+		<sub>{{cardDetails.card.id}}</sub>
+		<div class="card-details--info__description">
+			<h3>Ataque(s)</h3>
+			<div class="card-details--info__attack" *ngFor="let attack of cardDetails.card.attacks">
+				<p><strong>{{attack.name}}</strong></p>
+				<p>{{attack.text}}</p>
+				<p><strong>Dano:</strong> {{attack.damage}}</p>
+				<p><strong>Custo:</strong> {{attack.convertedEnergyCost}}</p>
+			</div>
+			<div class="card-details--col">
+				<div class="card-details--info__resistance">
+					<h3>Resistência(s)</h3>
+					<div *ngFor="let resistance of cardDetails.card.resistances">
+						<span class="card-details--types {{resistance.type.toLowerCase()}}">{{resistance.type}}</span>
+						{{resistance.value}}
+					</div>
+				</div>
+				<div class="card-details--info__weakness">
+					<h3>Fraqueza(s)</h3>
+					<div *ngFor="let weakness of cardDetails.card.weaknesses">
+						<span class="card-details--types {{weakness.type.toLowerCase()}}">{{weakness.type}}</span>
+						{{weakness.value}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,83 @@
+$type-colorless: #a8a878;
+$type-fire: #78c850;
+$type-fighting: #c03028;
+$type-water: #6890f0;
+$type-lightning: #f8d030;
+$type-grass: #78c850;
+$type-psychic: #f85888;
+$type-dragon: #7038f8;
+$type-darkness: #705848;
+$type-metal: #b8b8d0;
+$type-fairy: #ffb7fa;
+
+
+.card-details {
+	display: flex;
+	flex-wrap: wrap;
+	
+	&--col {
+		display: flex;
+		justify-content: space-around;
+	}
+	
+	&--image img {
+		width: 400px;
+	}
+	
+	&--info {
+		margin-left: 30px;
+		background: white;
+		flex: 1;
+		border-radius: 5px;
+		padding: 0px 15px;
+		box-shadow: 0 8px 8px -6px rgba(0, 0, 0, 0.25);
+		
+		&__attack {
+			border-bottom: 1px solid #c5c5c5;
+		}
+		
+		&__title {
+			margin-bottom: 0;
+		}
+	}
+	
+	&--types {
+		font-size: 15px;
+		font-weight: bold;
+		width: 6em;
+		text-align: center;
+		display: inline-block;
+		border: .1em solid transparent;
+		padding: .1em .2em .2em;
+		margin: .1em .015em;
+		border-radius: .4em;
+		text-transform: uppercase;
+		font-size:.8em; 
+		color: white;
+		text-shadow: 0em 0em .2em black; 
+		
+		&.colorless  { background-color: $type-colorless; border-top-color: lighten($type-colorless,15%); border-bottom-color: darken($type-colorless,15%); }
+		&.fire       { background-color: $type-fire; border-top-color: lighten($type-fire,15%); border-bottom-color: darken($type-fire,15%); }
+		&.fighting   { background-color: $type-fighting; border-top-color: lighten($type-fighting,15%); border-bottom-color: darken($type-fighting,15%); }
+		&.water      { background-color: $type-water; border-top-color: lighten($type-water,15%); border-bottom-color: darken($type-water,15%); }
+		&.lightning   { background-color: $type-lightning; border-top-color: lighten($type-lightning,15%); border-bottom-color: darken($type-lightning,15%); }
+		&.grass      { background-color: $type-grass; border-top-color: lighten($type-grass,15%); border-bottom-color: darken($type-grass,15%); }
+		&.psychic    { background-color: $type-psychic; border-top-color: lighten($type-psychic,15%); border-bottom-color: darken($type-psychic,15%); }
+		&.dragon     { background-color: $type-dragon; border-top-color: lighten($type-dragon,15%); border-bottom-color: darken($type-dragon,15%); }
+		&.darkness       { background-color: $type-darkness; border-top-color: lighten($type-darkness,15%); border-bottom-color: darken($type-darkness,15%); }
+		&.metal      { background-color: $type-metal; border-top-color: lighten($type-metal,15%); border-bottom-color: darken($type-metal,15%); }
+		&.fairy      { background-color: $type-fairy; border-top-color: lighten($type-fairy,15%); border-bottom-color: darken($type-fairy,15%); }
+	}
+}
+
+@media (max-width: 768px) {
+	.card-details {
+		&--info {
+			margin: 0;
+		}
+		
+		&--image img {
+			width: 100%;
+		}
+	}
+}
