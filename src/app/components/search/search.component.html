@@ -1,14 +1,19 @@
 <a [routerLink]="['/cards']">← Voltar para home</a>
 <h3>Resultados de busca para {{busca}}</h3>
 
-<div class="cards-list">
+<div *ngIf="!semRegistros" class="cards-list">
 	<div *ngFor="let card of cardsList" class="card">
 		<img [src]="card.imageUrl" height="300">
-		<div *ngIf="card" class="card--details">
+		<div class="card--details">
 			<h3>{{card.name}}</h3>
 			<p><strong>ID:</strong> {{card.id}}</p>
 			<p><strong>Tipos:</strong> {{card.types}}</p>
 		</div>
 		<button class="card--details__button" [routerLink]="['/cards', card.id]">Ver Detalhes</button>
 	</div>
+</div>
+<div *ngIf="semRegistros">
+	<h1>:(</h1>
+	<h3>Não encontramos nenhum registro!</h3>
+	<p>Tente fazer outra busca, ou buscar pelo começo do nome do Pokémon.</p>
 </div>

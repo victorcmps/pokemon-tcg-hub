@@ -11,6 +11,7 @@ import { Cards } from 'src/app/models/Cards';
 export class SearchComponent implements OnInit {
   busca: any;
   cardsList: Array<Object>;
+  semRegistros: boolean;
 
   constructor(private route: ActivatedRoute, private service: PokemonTcgService) { }
 
@@ -18,7 +19,12 @@ export class SearchComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       this.busca = params['search'];
       this.service.getCards(this.busca).subscribe(busca => {
-        this.cardsList = busca.cards;
+        if(busca.cards.length > 0) {
+          this.cardsList = busca.cards;
+          this.semRegistros = false;
+        } else {
+          this.semRegistros = true;
+        }
       })
   });
   }
