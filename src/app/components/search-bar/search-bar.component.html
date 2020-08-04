@@ -1,0 +1,8 @@
+<div class="search-bar">
+	<div class="container">
+		<div class="search-bar--content">
+			<input #searchBarInput class="search-bar__input" type="text" (keyup)="busca" placeholder="Pesquise um Pokémon">
+			<button class="search-bar__button" [routerLink]="['/search']" [queryParams]="{search: searchBarInput.value}">Pesquisar</button>
+		</div>
+	</div>
+</div>

@@ -6,13 +6,17 @@ import { CardsComponent } from './components/cards/cards.component';
 import { environment } from 'src/environments/environment';
 import { CardDetailsComponent } from './components/card-details/card-details.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { ApiDomainInterceptor } from './providers/api-domain.interceptor'
+import { ApiDomainInterceptor } from './providers/api-domain.interceptor';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { SearchComponent } from './components/search/search.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     CardsComponent,
-    CardDetailsComponent
+    CardDetailsComponent,
+    SearchBarComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

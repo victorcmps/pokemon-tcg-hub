@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonTcgService } from 'src/app/services/pokemon-tcg.service';
 import { ActivatedRoute } from '@angular/router'
+import { Cards } from 'src/app/models/Cards';
 
 @Component({
   selector: 'app-card-details',
@@ -8,7 +9,7 @@ import { ActivatedRoute } from '@angular/router'
   styleUrls: ['./card-details.component.scss']
 })
 export class CardDetailsComponent implements OnInit {
-  cardDetails: any;
+  cardDetails: Cards;
 
   constructor(private service: PokemonTcgService, private route: ActivatedRoute) { }
 
